@@ -1,0 +1,9 @@
+{
+  "title": "fridge",
+  "selfDefrosting": "true",
+  "capacity": {
+    "countFreezer": 2,
+    "countShelf": 8,
+    "countDoor": 2
+  }
+}
