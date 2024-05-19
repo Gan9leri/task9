@@ -17,16 +17,13 @@ dependencies {
             'com.opencsv:opencsv:5.9',
             'com.google.code.gson:gson:2.10.1',
             'com.fasterxml.jackson.core:jackson-core:2.13.1',
-            'com.fasterxml.jackson.core:jackson-databind:2.10.0'
+            'com.fasterxml.jackson.core:jackson-databind:2.10.0',
+            'org.assertj:assertj-core:3.25.3'
     )
 }
 
 test{
     useJUnitPlatform()
-}
-
-compileTestJava {
-    options.encoding = 'UTF-8'
 }
 
 compileTestJava {
