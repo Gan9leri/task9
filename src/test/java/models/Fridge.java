@@ -1,4 +1,4 @@
-package JsonModels;
+package models;
 
 public class Fridge {
 
@@ -10,23 +10,11 @@ public class Fridge {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public Boolean getSelfDefrosting() {
         return selfDefrosting;
     }
 
-    public void setSelfDefrosting(Boolean selfDefrosting) {
-        this.selfDefrosting = selfDefrosting;
-    }
-
     public Capacity getCapacity() {
         return capacity;
-    }
-
-    public void setCapacity(Capacity capacity) {
-        this.capacity = capacity;
     }
 }
