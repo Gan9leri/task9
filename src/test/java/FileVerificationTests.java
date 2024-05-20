@@ -57,7 +57,7 @@ public class FileVerificationTests {
                 if (entry.getName().endsWith(".csv")) {
                     CSVReader csv = new CSVReader(new InputStreamReader(zip_stream));
                     List<String[]> fullName = csv.readAll();
-                    assertThat(fullName.getFirst()).isEqualTo(new String[]{"Alex", " Smith"});
+                    assertThat(fullName.get(0)).isEqualTo(new String[]{"Alex", " Smith"});
                 }
             }
         } catch (IOException | CsvException e) {
@@ -88,11 +88,11 @@ public class FileVerificationTests {
         try(InputStream is = cl.getResourceAsStream("task9.json")){
             ObjectMapper mapper = new ObjectMapper();
             Fridge fridge = mapper.readValue(is, Fridge.class);
-            Assertions.assertEquals("fridge", fridge.getTitle());
-            Assertions.assertEquals(true, fridge.getSelfDefrosting());
-            Assertions.assertEquals(2, fridge.getCapacity().getCountFreezer());
-            Assertions.assertEquals(8, fridge.getCapacity().getCountShelf());
-            Assertions.assertEquals(2, fridge.getCapacity().getCountDoor());
+            assertThat(fridge.getTitle()).isEqualTo("fridge");
+            assertThat(fridge.getSelfDefrosting()).isEqualTo(true);
+            assertThat(fridge.getCapacity().getCountFreezer()).isEqualTo(2);
+            assertThat(fridge.getCapacity().getCountShelf()).isEqualTo(8);
+            assertThat(fridge.getCapacity().getCountDoor()).isEqualTo(2);
         }
     }
 }
